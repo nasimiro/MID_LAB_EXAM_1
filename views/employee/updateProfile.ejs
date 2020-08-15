@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+  </head>
+
+  <body>
+    <h1>Edit Profile</h1>
+    <form method="POST">
+      <fieldset>
+        <legend>Update user</legend>
+
+        <br />
+
+        <% if(typeof error != 'undefined' && error) { %> <% error.forEach(err =>
+        { %>
+        <p style="color: red;"><%= err.msg %></p>
+        <% }) %> <% } %>
+
+        <br />
+
+        <label for="username">Username: </label>
+        <input
+          type="text"
+          value="<%= user.username %>"
+          name="username"
+          id="username"
+        />
+        <br />
+        <br />
+
+        <label for="Phone">Phone: </label>
+        <input type="text" value="<%= user.phone %>" name="phone" id="Phone" />
+        <br />
+        <br />
+
+        <label for="Phone">Password: </label>
+        <input
+          type="text"
+          value="<%= user.password %>"
+          name="phone"
+          id="Phone"
+        />
+        <br />
+        <br />
+
+        <label for="gender">Gender</label>
+
+        <input type="radio" value="male" name="gender" id="gender" /> Male
+
+        <input type="radio" name="gender" value="female" id="gender" /> Female
+
+        <br />
+        <br />
+
+        <input type="file" name="image" id="" />
+
+        <br />
+        <br />
+
+        <button type="submit">Update the Employee</button>
+        <br />
+      </fieldset>
+    </form>
+  </body>
+</html>
